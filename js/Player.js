@@ -49,4 +49,16 @@ class Player {
       allPlayers = data.val();
     });
   }
+  getDistance()
+  {
+
+
+    var playesDintanviaRef=database.ref("players/player"+this.index);
+    playesDintanviaRef.on("value",(data)=>{
+      var data = data.val();
+      this.positionX = data.positionX;
+            this.positionY = data.positionY;
+
+    });
+  }
 }
